@@ -4,7 +4,7 @@ MIN_AGE=18
 # This script is to check their eligibility for Vote
 echo "Welcome to Shell Scripting Practice!"
 echo "================================"
-read "Enter your age: " AGE
+read -p"Enter your age: " AGE
 if [ $AGE -ge $MIN_AGE ]; then
     echo "You are Allowed to Vote"
 else
