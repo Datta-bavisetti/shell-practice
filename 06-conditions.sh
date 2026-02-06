@@ -3,7 +3,7 @@
 START_TIME=$(date +%s)
 echo "Script started at: $START_TIME"
 
-sleep=20
+sleep 20
 
 END_TIME=$(date +%s)
 TOTAL_TIME=$(($END_TIME - $START_TIME))
