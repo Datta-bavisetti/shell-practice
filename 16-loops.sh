@@ -23,7 +23,7 @@ fi
 
 for package in $@
 do
-    dnf list installed $package
+    dnf list installed $package &>> $LOGS_FILE
     echo "$package found, uninstalling now"
     if [ $? -eq 0 ]; then
         dnf remove $package -y
