@@ -14,10 +14,9 @@ mkdir -p $LOGS_FOLDER
 
 INSTALL(){
 if [ $1 -ne 0 ]; then
-    echo "$2...FAILURE" &>> $LOGS_FILE
-    exit 1
+    echo "$2...FAILURE" 
 else
-    echo "$2...SUCCESS" &>> $LOGS_FILE
+    echo "$2...SUCCESS" 
 fi
 }
 
