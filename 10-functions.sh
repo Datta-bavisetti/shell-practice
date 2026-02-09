@@ -8,7 +8,6 @@ if [ $USERID -ne 0 ]; then
     exit 1
 fi
 
-
 INSTALL(){
 if [ $1 -ne 0 ]; then
     echo "$2...FAILURE"
@@ -16,35 +15,13 @@ if [ $1 -ne 0 ]; then
 else
     echo "$2...SUCCESS"
 fi
-
 }
 
-echo "Installing Nginx"
 dnf install nginx -y
+INSTALL $? "Installing Nginx" #Here $? is 1st parameter and "---" is second parameter
 
-if [ $? -ne 0 ]; then
-    echo "Installing Nginx...FAILURE"
-    exit 1
-else
-    echo "Installing Nginx...SUCCESS"
-fi
-
-echo "Installing MySQL"
 dnf install mysql -y
+INSTALL $? "Installing MySQL" #Here $? is 1st parameter and "---" is second parameter
 
-if [ $? -ne 0 ]; then
-    echo "Installing mysql...FAILURE"
-    exit 1
-else
-    echo "Installing mysql...SUCCESS"
-fi
-
-echo "Installing python"
 dnf install python -y
-
-if [ $? -ne 0 ]; then
-    echo "Installing python...FAILURE"
-    exit 1
-else
-    echo "Installing python...SUCCESS"
-fi
+INSTALL $? "Installing python" #Here $? is 1st parameter and "---" is second parameter
