@@ -18,10 +18,10 @@ fi
 }
 
 dnf remove nginx -y
-INSTALL $? "Removing Nginx" #Here $? is 1st parameter and "---" is second parameter
+UNINSTALL $? "Removing Nginx" #Here $? is 1st parameter and "---" is second parameter
 
 dnf remove mysql -y
-INSTALL $? "Removing MySQL" #Here $? is 1st parameter and "---" is second parameter
+UNINSTALL $? "Removing MySQL" #Here $? is 1st parameter and "---" is second parameter
 
 dnf remove python -y
-INSTALL $? "Removing python" #Here $? is 1st parameter and "---" is second parameter
+UNINSTALL $? "Removing python" #Here $? is 1st parameter and "---" is second parameter
