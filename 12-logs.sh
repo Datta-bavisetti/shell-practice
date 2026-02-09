@@ -2,7 +2,7 @@
 
 #To install any package, we have to run with sudo access. But not all the users use the same. So, let's validate
 USERID=$(id -u)
-LOGS_FOLDER="/var/log/shell-script"
+LOGS_FOLDER="/var/log/shell-script/"
 LOGS_FILE="$LOGS_FOLDER/$0.log"
 
 if [ $USERID -ne 0 ]; then
