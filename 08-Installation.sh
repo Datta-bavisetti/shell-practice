@@ -17,3 +17,23 @@ if [ $? -ne 0 ]; then
 else
     echo "Installing Nginx...SUCCESS"
 fi
+
+echo "Installing MySQL"
+dnf install mysql -y
+
+if [ $? -ne 0 ]; then
+    echo "Installing mysql...FAILURE"
+    exit 1
+else
+    echo "Installing mysql...SUCCESS"
+fi
+
+echo "Installing python"
+dnf install python -y
+
+if [ $? -ne 0 ]; then
+    echo "Installing python...FAILURE"
+    exit 1
+else
+    echo "Installing python...SUCCESS"
+fi
