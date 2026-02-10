@@ -6,11 +6,11 @@ USERID=$(id -u)
 LOGS_FOLDER="/var/log/shell-script/"
 LOGS_FILE="$LOGS_FOLDER/$0.log"
 #color codes in shell scripting
-# R="\e[31m"
-# G="\e[32m"
-# Y="\e[33m"
-# B="\e[34m"
-# N="\e[0m"
+R="\e[31m"
+G="\e[32m"
+Y="\e[33m"
+B="\e[34m"
+N="\e[0m"
 
 mkdir -p $LOGS_FOLDER
 
@@ -35,6 +35,6 @@ do
         dnf install $package -y &>> $LOGS_FILE
         INSTALL $? "Installing $package" 
     else
-        echo -e "$package is already installed...$Y SKIPPING $N" 
+        echo -e "$package is already installed...$Y SKIPPING$N" 
     fi
 done
