@@ -31,10 +31,10 @@ for package in $@
 do
     dnf list installed $package &>> $LOGS_FILE
     if [ $? -ne 0 ]; then
-        echo -e " $B $package $N is not installed, installing now"
+        echo -e " $B $package $N is not installed, installing now" | tee -a $LOGS_FILE
         dnf install $package -y &>> $LOGS_FILE
-        INSTALL $? "Installing $package"
+        INSTALL $? "Installing $package" | tee -a $LOGS_FILE
     else
-        echo -e "$package is already installed...$Y SKIPPING $N"
+        echo -e "$package is already installed...$Y SKIPPING $N" | tee -a $LOGS_FILE
     fi
 done
